@@ -1,0 +1,40 @@
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Gambetta', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 2.5rem 1.25rem;
+}
+img {
+    width: 100%;
+    display: block;
+}
+header {
+    text-align: center;
+}
+.container {
+    max-width: 650px;
+    margin: auto;
+}
+#manifest {
+    color: #A7B1BF;
+    font-size: 2rem;
+    line-height: 130%;
+    text-align: center;
+    transition: all 500ms ease-out;
+}
+.blur {
+    filter: blur(10px);
+  }
+footer p {
+    color: #A7B1BF;
+    font-size: 1rem;
+    line-height: 100%;
+    text-align: center;
+}
