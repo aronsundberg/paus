@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100.1vh;
+    height: 101vh;
     padding: 2.5rem 1.25rem;
 }
 img {
