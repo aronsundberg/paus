@@ -15,6 +15,7 @@ function myFunction(x) {
         }, 4000);
     } else {
         blurredElement.classList.remove("blur");
+        btmText.textContent = "To be continued...";
         window.addEventListener("mousemove", () => {
             blurredElement.classList.add("blur");
             clearTimeout(timer);
