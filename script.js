@@ -1,5 +1,6 @@
 let timer;
 const blurredElement = document.getElementById("manifest"); 
+const btmText = document.getElementById("btm-txt");
 
 function mouseStopped(){ 
     blurredElement.classList.remove("blur");
@@ -7,7 +8,6 @@ function mouseStopped(){
 function myFunction(x) {
     if (x.matches) { // If media query matches
         blurredElement.classList.add("blur");
-        const btmText = document.getElementById("btm-txt");
         btmText.textContent = "Take a breath...";
         setTimeout(() => {
             blurredElement.classList.remove("blur");
