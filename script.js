@@ -21,7 +21,7 @@ function myFunction(x) {
 }
   
 // Create a MediaQueryList object
-var x = window.matchMedia("(max-width: 700px)");
+var x = window.matchMedia("(max-width: 768px)");
   
 // Call listener function at run time
 myFunction(x);
