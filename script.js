@@ -11,8 +11,10 @@ function myFunction(x) {
         footer.innerHTML = "<p>Take a breath...</p>";
         setTimeout(() => {
             blurredElement.classList.remove("blur");
+        }, 1000);
+        setTimeout(() => {
             footer.innerHTML = "<p>To be continued...</p>";
-        }, 4000);
+        }, 5000);
     } else {
         blurredElement.classList.remove("blur");
         footer.innerHTML = "<p>To be continued...</p>";

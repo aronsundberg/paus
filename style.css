@@ -24,14 +24,15 @@ header {
 }
 .container {
     max-width: 800px;
-    margin: 64px auto;
+    margin: 80px auto;
 }
 #manifest {
     color: #A7B1BF;
     font-size: 1.5rem;
     line-height: 130%;
     text-align: center;
-    transition: filter 800ms ease-out;
+    transition: filter 4000ms ease-out;
+    -webkit-transition: filter 4000ms ease-out;
 }
 .blur {
     filter: blur(10px);
@@ -54,6 +55,10 @@ footer p {
     body {
         height: 100vh;
         justify-content: space-between;
+    }
+    #manifest {
+        transition: filter 800ms ease-out;
+        -webkit-transition: filter 800ms ease-out;
     }
 }
 @media (min-width: 1600px) {
