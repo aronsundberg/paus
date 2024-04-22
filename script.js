@@ -1,6 +1,6 @@
 let timer;
 const blurredElement = document.getElementById("manifest"); 
-const btmText = document.getElementById("btm-txt");
+const footer = document.querySelector("footer");
 
 function mouseStopped(){ 
     blurredElement.classList.remove("blur");
@@ -8,14 +8,14 @@ function mouseStopped(){
 function myFunction(x) {
     if (x.matches) { // If media query matches
         blurredElement.classList.add("blur");
-        btmText.textContent = "Take a breath...";
+        footer.innerHTML = "<p>Take a breath...</p>";
         setTimeout(() => {
             blurredElement.classList.remove("blur");
-            btmText.textContent = "To be continued...";
+            footer.innerHTML = "<p>To be continued...</p>";
         }, 4000);
     } else {
         blurredElement.classList.remove("blur");
-        btmText.textContent = "To be continued...";
+        footer.innerHTML = "<p>To be continued...</p>";
         window.addEventListener("mousemove", () => {
             blurredElement.classList.add("blur");
             clearTimeout(timer);
