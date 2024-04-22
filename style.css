@@ -31,7 +31,7 @@ header {
 }
 .blur {
     filter: blur(10px);
-    -webkit-filter: blur(10px);
+    -webkit-filter: blur(8px);
   }
 footer p {
     color: #A7B1BF;

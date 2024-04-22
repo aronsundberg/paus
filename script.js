@@ -1,15 +1,18 @@
-var timer;
-var blurredElement = document.getElementById("manifest");   // store element for faster access
+let timer;
+const blurredElement = document.getElementById("manifest"); 
 
-function mouseStopped(){                                 // the actual function that is called
+function mouseStopped(){ 
     blurredElement.classList.remove("blur");
 }
 function myFunction(x) {
     if (x.matches) { // If media query matches
         blurredElement.classList.add("blur");
+        const btmText = document.getElementById("btm-txt");
+        btmText.textContent = "Take a breath...";
         setTimeout(() => {
             blurredElement.classList.remove("blur");
-        }, 2000);
+            btmText.textContent = "To be continued...";
+        }, 4000);
     } else {
         blurredElement.classList.remove("blur");
         window.addEventListener("mousemove", () => {
