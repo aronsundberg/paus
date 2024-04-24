@@ -1,0 +1,129 @@
+$bg-white: #f2f3fa;
+$bg-md: #D6DFF2;
+$bg-dark: #b9cbea;
+$text-light: #627794;
+$text-dark: #415064;
+
+*, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Gambetta', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    height: 100svh;
+    padding: 2.5rem 1.25rem;
+    background-color: $bg-white;
+
+    background: linear-gradient(225deg, $bg-white, $bg-dark);
+    background-size: 400% 400%;
+
+    -webkit-animation: gradient 10s ease infinite;
+    -moz-animation: gradient 10s ease infinite;
+    animation: gradient 10s ease infinite;
+
+    @media (min-width: 768px) {
+        height: 100vh;
+        justify-content: space-between;
+    }
+}
+@-webkit-keyframes gradient {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
+@-moz-keyframes gradient {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
+@keyframes gradient {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+}
+img {
+    width: 100%;
+    display: block;
+}
+header {
+    text-align: center;
+    .logo-holder {
+        background-color: $bg-md;
+        border-radius: 1rem;
+        display: inline-block;
+        padding: 15px 20px 13px;
+        margin-right: .5rem;
+        .logo {
+            height: 16px;
+        }
+    }
+    .icon-holder {
+        border-radius: 1rem;
+        display: inline-block;
+        padding: 10px;
+        background-color: $bg-md;
+        @media (min-width: 768px) {
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            background-color: transparent;
+            transition: background-color 500ms ease-out;
+            &:hover {
+                background-color: $bg-md;
+            }
+        }
+        .link-icon {
+            width: 24px;
+        }
+    }
+}
+.container {
+    max-width: 800px;
+    margin: 80px auto;
+    
+    @media (min-width: 768px) {
+        margin-top: 0;
+    }
+    #manifest {
+        color: #$text-dark;
+        font-size: 1.5rem;
+        line-height: 150%;
+        text-align: center;
+        transition: filter 4s ease-out;
+        -webkit-transition: filter 4s ease-out;
+        
+        @media (min-width: 576px) {
+            font-size: 1.75rem;
+        }
+
+        @media (min-width: 768px) {
+            transition: filter 1s ease-out;
+            -webkit-transition: filter 1s ease-out;
+        }
+       
+        @media (min-width: 1600px) {
+            font-size: 2rem;
+        }
+       
+        &.blur {
+            filter: blur(10px);
+            -webkit-filter: blur(8px);
+          }
+    }
+}
+footer {
+    p {
+        color: $text-light;
+        font-family: 'Azeret Mono', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.28px;
+        font-size: .75rem;
+        line-height: 100%;
+        text-align: center;
+    }
+}
