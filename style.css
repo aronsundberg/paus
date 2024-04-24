@@ -20,7 +20,7 @@ body {
   height: 100vh;
   height: 100svh;
   padding: 2.5rem 1.25rem;
-  background-color: #F2F3FA;
+  background-color: #f2f3fa;
   background: linear-gradient(225deg, #f2f3fa, #b9cbea);
   background-size: 400% 400%;
   -webkit-animation: gradient 10s ease infinite;
