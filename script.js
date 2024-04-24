@@ -13,11 +13,11 @@ function myFunction(x) {
             blurredElement.classList.remove("blur");
         }, 1000);
         setTimeout(() => {
-            footer.innerHTML = "<p>To be continued...</p>";
+            footer.innerHTML = "<p>Nice to meet you!</p>";
         }, 5000);
     } else {
         blurredElement.classList.remove("blur");
-        footer.innerHTML = "<p>To be continued...</p>";
+        footer.innerHTML = "<p>Nice to meet you!</p>";
         window.addEventListener("mousemove", () => {
             blurredElement.classList.add("blur");
             clearTimeout(timer);
