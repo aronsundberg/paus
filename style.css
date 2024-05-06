@@ -6,22 +6,20 @@
 }
 
 body {
-  font-family: "Gambetta", serif;
+  font-family: "Lora", serif;
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+  height: 100svh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
-  height: 100svh;
-  padding: 2.5rem 1.25rem;
-  background-color: #f2f3fa;
-  background: linear-gradient(225deg, #f2f3fa, #b9cbea);
+  background: linear-gradient(225deg, #E2EEB2, #F6FAF2);
   background-size: 400% 400%;
   -webkit-animation: gradient 10s ease infinite;
   animation: gradient 10s ease infinite;
@@ -29,9 +27,6 @@ body {
 @media (min-width: 768px) {
   body {
     height: 100vh;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
 }
 
@@ -57,74 +52,97 @@ body {
     background-position: 93% 0%;
   }
 }
-img {
-  width: 100%;
-  display: block;
+a {
+  text-decoration: none;
 }
 
-header {
-  text-align: center;
+.logo {
+  position: relative;
+  padding: 0 2.5rem;
+  margin-top: -24px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 190px;
+          flex: 0 0 190px;
+  -webkit-transition: -webkit-box-flex 2s ease-in-out;
+  transition: -webkit-box-flex 2s ease-in-out;
+  transition: flex 2s ease-in-out;
+  transition: flex 2s ease-in-out, -webkit-box-flex 2s ease-in-out, -ms-flex 2s ease-in-out;
 }
-header .logo-holder {
-  background-color: #D6DFF2;
-  border-radius: 1rem;
-  display: inline-block;
-  padding: 15px 20px 13px;
-  margin-right: 0.5rem;
+.logo img {
+  height: 22px;
 }
-header .logo-holder .logo {
-  height: 16px;
+.logo #logo-1 {
+  position: absolute;
 }
-header .icon-holder {
-  border-radius: 1rem;
-  display: inline-block;
-  padding: 10px;
-  background-color: #D6DFF2;
+.logo #logo-2 {
+  position: absolute;
+  right: 2.5rem;
 }
-@media (min-width: 768px) {
-  header .icon-holder {
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    background-color: transparent;
-    -webkit-transition: background-color 500ms ease-out;
-    transition: background-color 500ms ease-out;
-  }
-  header .icon-holder:hover {
-    background-color: #D6DFF2;
-  }
-}
-header .icon-holder .link-icon {
-  width: 24px;
+.logo .logo-line {
+  background-color: #26356C;
+  height: 2px;
+  position: absolute;
+  left: calc(2.5rem + 54px);
+  right: calc(2.5rem + 18px);
+  margin-top: 22px;
 }
 
 .container {
-  max-width: 800px;
-  margin: 80px auto;
+  position: absolute;
 }
 @media (min-width: 768px) {
   .container {
     margin-top: 0;
   }
 }
-.container #manifest {
-  color: #415064;
+.container.manifest-top {
+  left: 2.5rem;
+  top: 2.5rem;
+}
+.container.manifest-btm {
+  right: 2.5rem;
+  bottom: 2.5rem;
+}
+.container.mail-wrapper {
+  right: 2.5rem;
+  top: 2.5rem;
+}
+.container.mail-wrapper a {
+  color: #26356C;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted #26356C;
+}
+.container.mail-wrapper a:hover {
+  border-bottom: 1px solid #26356C;
+}
+.container.date-wrapper {
+  left: 2.5rem;
+  bottom: 2.5rem;
+}
+.container.date-wrapper img {
+  width: 1rem;
+  margin-bottom: -3px;
+  margin-right: 0.5rem;
+}
+.container .style-mono {
+  font-family: "Azeret Mono", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #26356C;
+  letter-spacing: 0.05rem;
+}
+.container .manifest {
+  color: #26356C;
   font-size: 1.5rem;
-  line-height: 150%;
-  text-align: center;
+  line-height: 140%;
   -webkit-transition: -webkit-filter 4s ease-out;
   transition: -webkit-filter 4s ease-out;
   transition: filter 4s ease-out;
   transition: filter 4s ease-out, -webkit-filter 4s ease-out;
   -webkit-transition: filter 4s ease-out;
 }
-@media (min-width: 576px) {
-  .container #manifest {
-    font-size: 1.75rem;
-  }
-}
 @media (min-width: 768px) {
-  .container #manifest {
+  .container .manifest {
     -webkit-transition: -webkit-filter 1s ease-out;
     transition: -webkit-filter 1s ease-out;
     transition: filter 1s ease-out;
@@ -132,22 +150,14 @@ header .icon-holder .link-icon {
     -webkit-transition: filter 1s ease-out;
   }
 }
-@media (min-width: 1600px) {
-  .container #manifest {
-    font-size: 2rem;
-  }
-}
-.container #manifest.blur {
+.container .manifest.blur {
   filter: blur(10px);
   -webkit-filter: blur(8px);
 }
 
-footer p {
-  color: #627794;
-  font-family: "Azeret Mono", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.28px;
-  font-size: 0.75rem;
-  line-height: 100%;
-  text-align: center;
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
 }/*# sourceMappingURL=style.css.map */

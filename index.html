@@ -13,31 +13,40 @@
 
     <link rel="icon" type="image/png" href="img/favicon.png" sizes="16x16">
     <link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32">
-    <link href="https://api.fontshare.com/v2/css?f[]=gambetta@500&f[]=azeret-mono@400&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=azeret-mono@400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
    
-    <header>
-        <div class="logo-holder">
-            <img class="logo" src="img/paus_logo.svg" alt="Paus logotype">
-        </div>
-        <a class="icon-holder" href="#">
-            <img src="img/pause_icon.svg" alt="" class="link-icon">
-        </a>
+    <div class="logo">
+        <img id="logo-1" src="img/paus_logo_1.svg">
+        <div class="logo-line"></div>
+        <img id="logo-2" src="img/paus_logo_2.svg">
+    </div>
 
-    </header>
-   
-    <main class="container">
-        <p id="manifest">
+    <div class="container manifest-top hide">
+        <p class="manifest" id="manifest-1">
             You deserve a break. 
             <br>A break to elevate and rejuvenate yourself. 
             <br>A break to amplify your performance. 
-            <br><br>Cherish the stillness, embrace the pause.
         </p>
-    </main>
+    </div>
+    
+    <div class="container manifest-btm hide">
+        <p class="manifest" id="manifest-2">Cherish the stillness, embrace the pause.</p>
+    </div>
    
-    <footer></footer>
+    <div class="container mail-wrapper hide">
+        <a class="style-mono" id="mail" href="mailto:jamie@fakeemail.com?subject=What's this?&body=I wanna know more about PAU_S.">Stay looped</a>
+    </div>
+    
+    <div class="container date-wrapper hide">
+        <img src="img/clock.svg">
+        <span class="style-mono" id="date"></span>
+    </div>
    
     <script src="script.js" type="text/javascript"></script>
 </body>

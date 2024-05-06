@@ -1,8 +1,7 @@
-$bg-white: #f2f3fa;
-$bg-md: #D6DFF2;
-$bg-dark: #b9cbea;
-$text-light: #627794;
-$text-dark: #415064;
+$blue: #26356C;
+
+$yellow: #E2EEB2;
+$yellow-light: #F6FAF2;
 
 *, html {
     margin: 0;
@@ -10,16 +9,15 @@ $text-dark: #415064;
     box-sizing: border-box;
 }
 body {
-    font-family: 'Gambetta', serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    font-family: "Lora", serif;
+    -webkit-font-smoothing: antialiased;
     height: 100vh;
     height: 100svh;
-    padding: 2.5rem 1.25rem;
-    background-color: $bg-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background: linear-gradient(225deg, $bg-white, $bg-dark);
+    background: linear-gradient(225deg, $yellow, $yellow-light);
     background-size: 400% 400%;
 
     -webkit-animation: gradient 10s ease infinite;
@@ -28,7 +26,6 @@ body {
 
     @media (min-width: 768px) {
         height: 100vh;
-        justify-content: space-between;
     }
 }
 @-webkit-keyframes gradient {
@@ -46,69 +43,94 @@ body {
     50%{background-position:0% 100%}
     100%{background-position:93% 0%}
 }
-img {
-    width: 100%;
-    display: block;
+a {
+    text-decoration: none;
 }
-header {
-    text-align: center;
-    .logo-holder {
-        background-color: $bg-md;
-        border-radius: 1rem;
-        display: inline-block;
-        padding: 15px 20px 13px;
-        margin-right: .5rem;
-        .logo {
-            height: 16px;
-        }
+.logo {
+    position: relative;
+    padding: 0 2.5rem;
+    margin-top: -24px;
+    flex: 0 0 190px;
+    transition: flex 2s ease-in-out;
+    img {
+        height: 22px;
     }
-    .icon-holder {
-        border-radius: 1rem;
-        display: inline-block;
-        padding: 10px;
-        background-color: $bg-md;
-        @media (min-width: 768px) {
-            position: absolute;
-            top: 2.5rem;
-            right: 2.5rem;
-            background-color: transparent;
-            transition: background-color 500ms ease-out;
-            &:hover {
-                background-color: $bg-md;
-            }
-        }
-        .link-icon {
-            width: 24px;
-        }
+    #logo-1 {
+        position: absolute;
+    }
+    #logo-2 {
+        position: absolute;
+        right: 2.5rem;
+    }
+    .logo-line {
+        background-color: $blue;
+        height: 2px;
+        position: absolute;
+        left: calc(2.5rem + 54px);
+        right: calc(2.5rem + 18px);
+        margin-top: 22px;
     }
 }
 .container {
-    max-width: 800px;
-    margin: 80px auto;
-    
+    position: absolute;
     @media (min-width: 768px) {
         margin-top: 0;
     }
-    #manifest {
-        color: $text-dark;
+    &.manifest-top {
+        left: 2.5rem;
+        top: 2.5rem;
+    }
+    &.manifest-btm {
+        right: 2.5rem;
+        bottom: 2.5rem;
+    }
+    &.mail-wrapper {
+        right: 2.5rem;
+        top: 2.5rem;
+        a {
+            color: $blue;
+            padding-bottom: 2px;
+            border-bottom: 1px dotted $blue;
+            &:hover {
+                border-bottom: 1px solid $blue;
+            }
+        }
+    }
+    &.date-wrapper {
+        left: 2.5rem;
+        bottom: 2.5rem;
+        img {
+            width: 1rem;
+            margin-bottom: -3px;
+            margin-right: .5rem;
+        }
+    }
+    .style-mono {
+        font-family: 'Azeret Mono', monospace;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        color: $blue;
+        letter-spacing: .05rem;
+    }
+    .manifest {
+        color: $blue;
         font-size: 1.5rem;
-        line-height: 150%;
-        text-align: center;
+        line-height: 140%;
         transition: filter 4s ease-out;
         -webkit-transition: filter 4s ease-out;
         
-        @media (min-width: 576px) {
-            font-size: 1.75rem;
-        }
+        // @media (min-width: 576px) {
+        //     font-size: 1.5rem;
+        // }
 
         @media (min-width: 768px) {
             transition: filter 1s ease-out;
             -webkit-transition: filter 1s ease-out;
         }
        
-        @media (min-width: 1600px) {
-            font-size: 2rem;
-        }
+        // @media (min-width: 1600px) {
+        //     font-size: 2rem;
+        // }
        
         &.blur {
             filter: blur(10px);
@@ -116,14 +138,8 @@ header {
           }
     }
 }
-footer {
-    p {
-        color: $text-light;
-        font-family: 'Azeret Mono', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.28px;
-        font-size: .75rem;
-        line-height: 100%;
-        text-align: center;
-    }
+.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
