@@ -19,10 +19,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: linear-gradient(225deg, #E2EEB2, #F6FAF2);
-  background-size: 400% 400%;
-  -webkit-animation: gradient 10s ease infinite;
-  animation: gradient 10s ease infinite;
+  background: rgb(215, 234, 185);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(215, 234, 185)), to(rgb(246, 250, 242)));
+  background: linear-gradient(180deg, rgb(215, 234, 185) 0%, rgb(246, 250, 242) 100%);
 }
 @media (min-width: 768px) {
   body {
@@ -30,28 +29,6 @@ body {
   }
 }
 
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 93% 0%;
-  }
-  50% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 93% 0%;
-  }
-}
-@keyframes gradient {
-  0% {
-    background-position: 93% 0%;
-  }
-  50% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 93% 0%;
-  }
-}
 a {
   text-decoration: none;
 }

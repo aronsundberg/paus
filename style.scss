@@ -17,31 +17,12 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(225deg, $yellow, $yellow-light);
-    background-size: 400% 400%;
-
-    -webkit-animation: gradient 10s ease infinite;
-    -moz-animation: gradient 10s ease infinite;
-    animation: gradient 10s ease infinite;
+    background: rgb(215,234,185);
+    background: linear-gradient(180deg, rgba(215,234,185,1) 0%, rgba(246,250,242,1) 100%);
 
     @media (min-width: 768px) {
         height: 100vh;
     }
-}
-@-webkit-keyframes gradient {
-    0%{background-position:93% 0%}
-    50%{background-position:0% 100%}
-    100%{background-position:93% 0%}
-}
-@-moz-keyframes gradient {
-    0%{background-position:93% 0%}
-    50%{background-position:0% 100%}
-    100%{background-position:93% 0%}
-}
-@keyframes gradient {
-    0%{background-position:93% 0%}
-    50%{background-position:0% 100%}
-    100%{background-position:93% 0%}
 }
 a {
     text-decoration: none;
