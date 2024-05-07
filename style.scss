@@ -46,6 +46,9 @@ a {
     font-size: 1rem;
     line-height: 140%;
     @media (min-width: 768px) {
+        font-size: 1.2rem;
+   }
+    @media (min-width: 992px) {
         font-size: 1.375rem;
    }
 }
@@ -57,7 +60,7 @@ header {
         justify-content: space-between;
     }
     .manifest {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         span {
             @media (min-width: 992px) {
                 display: none;
@@ -67,10 +70,11 @@ header {
     .mail-wrapper {
         a {
             color: $blue;
-            padding-bottom: 2px;
-            border-bottom: 1px dotted $blue;
+            padding: .4rem .6rem;
+            border: 1px dotted $blue;
+            border-radius: 50px;
             &:hover {
-                border-bottom: 1px solid $blue;
+                border: 1px solid $blue;
             }
         }
     }

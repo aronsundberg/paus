@@ -63,6 +63,11 @@ a {
 }
 @media (min-width: 768px) {
   .manifest {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .manifest {
     font-size: 1.375rem;
   }
 }
@@ -81,7 +86,7 @@ header {
   }
 }
 header .manifest {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 @media (min-width: 992px) {
   header .manifest span {
@@ -90,11 +95,12 @@ header .manifest {
 }
 header .mail-wrapper a {
   color: #26356C;
-  padding-bottom: 2px;
-  border-bottom: 1px dotted #26356C;
+  padding: 0.4rem 0.6rem;
+  border: 1px dotted #26356C;
+  border-radius: 50px;
 }
 header .mail-wrapper a:hover {
-  border-bottom: 1px solid #26356C;
+  border: 1px solid #26356C;
 }
 
 .logo-wrapper {
