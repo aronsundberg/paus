@@ -47,7 +47,7 @@ a {
   font-family: "Azeret Mono", monospace;
   font-size: 0.65rem;
   text-transform: uppercase;
-  color: #26356C;
+  color: #313B5E;
   letter-spacing: 0.05rem;
 }
 @media (min-width: 768px) {
@@ -57,7 +57,7 @@ a {
 }
 
 .manifest {
-  color: #26356C;
+  color: #313B5E;
   font-size: 1rem;
   line-height: 140%;
 }
@@ -94,13 +94,19 @@ header .manifest {
   }
 }
 header .mail-wrapper a {
-  color: #26356C;
+  color: #313B5E;
   padding: 0.4rem 0.6rem;
-  border: 1px dotted #26356C;
+  border: 1px dotted #313B5E;
   border-radius: 50px;
 }
 header .mail-wrapper a:hover {
-  border: 1px solid #26356C;
+  border: 1px solid #313B5E;
+}
+header .mail-wrapper a:focus {
+  outline: none;
+  border: 1px solid #313B5E;
+  background-color: #313B5E;
+  color: #fff;
 }
 
 .logo-wrapper {
@@ -140,7 +146,7 @@ header .mail-wrapper a:hover {
   right: 0;
 }
 .logo-wrapper .logo .logo-line {
-  background-color: #26356C;
+  background-color: #313B5E;
   height: 2px;
   position: absolute;
   left: 54px;

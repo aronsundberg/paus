@@ -1,4 +1,4 @@
-$blue: #26356C;
+$blue: #313B5E;
 $yellow: #E2EEB2;
 $yellow-light: #F6FAF2;
 
@@ -75,6 +75,12 @@ header {
             border-radius: 50px;
             &:hover {
                 border: 1px solid $blue;
+            }
+            &:focus {
+                outline: none;
+                border: 1px solid $blue;
+                background-color: $blue;
+                color: #fff;
             }
         }
     }
