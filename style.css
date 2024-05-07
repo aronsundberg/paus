@@ -13,12 +13,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem;
   background: rgb(215, 234, 185);
   background: -webkit-gradient(linear, left top, left bottom, from(rgb(215, 234, 185)), to(rgb(246, 250, 242)));
   background: linear-gradient(180deg, rgb(215, 234, 185) 0%, rgb(246, 250, 242) 100%);
@@ -28,113 +33,172 @@ body {
     height: 100vh;
   }
 }
+@media (min-width: 992px) {
+  body {
+    padding: 2.5rem;
+  }
+}
 
 a {
   text-decoration: none;
 }
 
-.logo {
-  position: relative;
-  padding: 0 2.5rem;
-  margin-top: -24px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 190px;
-          flex: 0 0 190px;
-  -webkit-transition: -webkit-box-flex 2s ease-in-out;
-  transition: -webkit-box-flex 2s ease-in-out;
-  transition: flex 2s ease-in-out;
-  transition: flex 2s ease-in-out, -webkit-box-flex 2s ease-in-out, -ms-flex 2s ease-in-out;
-}
-.logo img {
-  height: 22px;
-}
-.logo #logo-1 {
-  position: absolute;
-}
-.logo #logo-2 {
-  position: absolute;
-  right: 2.5rem;
-}
-.logo .logo-line {
-  background-color: #26356C;
-  height: 2px;
-  position: absolute;
-  left: calc(2.5rem + 54px);
-  right: calc(2.5rem + 18px);
-  margin-top: 22px;
-}
-
-.container {
-  position: absolute;
-}
-@media (min-width: 768px) {
-  .container {
-    margin-top: 0;
-  }
-}
-.container.manifest-top {
-  left: 2.5rem;
-  top: 2.5rem;
-}
-.container.manifest-btm {
-  right: 2.5rem;
-  bottom: 2.5rem;
-}
-.container.mail-wrapper {
-  right: 2.5rem;
-  top: 2.5rem;
-}
-.container.mail-wrapper a {
-  color: #26356C;
-  padding-bottom: 2px;
-  border-bottom: 1px dotted #26356C;
-}
-.container.mail-wrapper a:hover {
-  border-bottom: 1px solid #26356C;
-}
-.container.date-wrapper {
-  left: 2.5rem;
-  bottom: 2.5rem;
-}
-.container.date-wrapper img {
-  width: 1rem;
-  margin-bottom: -3px;
-  margin-right: 0.5rem;
-}
-.container .style-mono {
+.style-mono {
   font-family: "Azeret Mono", monospace;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   color: #26356C;
   letter-spacing: 0.05rem;
 }
-.container .manifest {
-  color: #26356C;
-  font-size: 1.5rem;
-  line-height: 140%;
-  -webkit-transition: -webkit-filter 4s ease-out;
-  transition: -webkit-filter 4s ease-out;
-  transition: filter 4s ease-out;
-  transition: filter 4s ease-out, -webkit-filter 4s ease-out;
-  -webkit-transition: filter 4s ease-out;
-}
-@media (min-width: 768px) {
-  .container .manifest {
-    -webkit-transition: -webkit-filter 1s ease-out;
-    transition: -webkit-filter 1s ease-out;
-    transition: filter 1s ease-out;
-    transition: filter 1s ease-out, -webkit-filter 1s ease-out;
-    -webkit-transition: filter 1s ease-out;
+@media (min-width: 576px) {
+  .style-mono {
+    font-size: 0.8rem;
   }
 }
-.container .manifest.blur {
-  filter: blur(10px);
-  -webkit-filter: blur(8px);
+
+.manifest {
+  color: #26356C;
+  font-size: 1rem;
+  line-height: 140%;
+}
+@media (min-width: 576px) {
+  .manifest {
+    font-size: 1.5rem;
+  }
 }
 
-.hide {
+header {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+header .manifest {
+  margin-bottom: 1.5rem;
+}
+header .mail-wrapper a {
+  color: #26356C;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted #26356C;
+}
+header .mail-wrapper a:hover {
+  border-bottom: 1px solid #26356C;
+}
+
+.logo-wrapper {
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  left: 1.5rem;
+  right: 1.5rem;
+}
+@media (min-width: 992px) {
+  .logo-wrapper {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+}
+.logo-wrapper .logo {
+  position: relative;
+  padding: 0 1.5rem;
+  width: 100px;
+  -webkit-transition: width 1s ease-out;
+  transition: width 1s ease-out;
+  margin: auto;
+}
+@media (min-width: 576px) {
+  .logo-wrapper .logo {
+    -webkit-transition: width 2s ease-out;
+    transition: width 2s ease-out;
+  }
+}
+.logo-wrapper .logo img {
+  height: 22px;
+}
+.logo-wrapper .logo #logo-1 {
+  position: absolute;
+  left: 0;
+}
+.logo-wrapper .logo #logo-2 {
+  position: absolute;
+  right: 0;
+}
+.logo-wrapper .logo .logo-line {
+  background-color: #26356C;
+  height: 2px;
+  position: absolute;
+  left: 54px;
+  right: 18px;
+  margin-top: 22px;
+}
+
+footer {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+}
+footer .manifest {
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 992px) {
+  footer .manifest {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  footer .date-wrapper {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+footer .date-wrapper img {
+  width: 0.8rem;
+  margin-bottom: -3px;
+  margin-right: 0.2rem;
+}
+@media (min-width: 576px) {
+  footer .date-wrapper img {
+    width: 1rem;
+    margin-bottom: -3px;
+    margin-right: 0.5rem;
+  }
+}
+
+.fadeIn {
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 2s ease-in-out;
   transition: opacity 2s ease-in-out;
+}
+
+.blurred {
+  -webkit-transition: -webkit-filter 1s ease-out;
+  transition: -webkit-filter 1s ease-out;
+  transition: filter 1s ease-out;
+  transition: filter 1s ease-out, -webkit-filter 1s ease-out;
+  -webkit-transition: filter 1s ease-out;
+}
+
+.blur {
+  filter: blur(10px);
+  -webkit-filter: blur(8px);
 }/*# sourceMappingURL=style.css.map */
