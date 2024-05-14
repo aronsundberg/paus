@@ -70,6 +70,12 @@ header {
     .btn-wrapper {
         display: flex;
         align-items: flex-start;
+        position: absolute;
+        bottom: 4rem;
+        @media (min-width: 768px) {
+            position: initial;
+            bottom: initial;
+        }
         a {
             color: $blue;
             border: 1px dotted $blue;
