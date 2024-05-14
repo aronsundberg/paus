@@ -116,6 +116,7 @@ header .btn-wrapper a {
 }
 header .btn-wrapper a:nth-child(1) {
   margin-right: 1rem;
+  padding: 0 1rem;
 }
 header .btn-wrapper a:hover {
   border: 1px solid #313B5E;

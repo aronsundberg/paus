@@ -80,6 +80,7 @@ header {
             border-radius: 10rem;
             &:nth-child(1) {
                 margin-right: 1rem;
+                padding: 0 1rem;
             }
             &:hover {
                 border: 1px solid $blue;
