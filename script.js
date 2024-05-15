@@ -1,13 +1,15 @@
 const logo = document.querySelector(".logo");
 const hiddenElements = document.querySelectorAll(".fadeIn");
-let timer;
-const blurredElement = document.querySelectorAll(".blurred"); 
+const blurredElements = document.querySelectorAll(".blurred");
 const timeElement = document.getElementById("date");
-// const footer = document.querySelector("footer");
+let timer;
 
+// Set logo width after 1 second
 setTimeout(() => {
     logo.style.width = "100%";
 }, 1000);
+
+// Show hidden elements after 2 seconds
 setTimeout(() => {
     hiddenElements.forEach(el => {
         el.style.opacity = "1";
@@ -15,43 +17,50 @@ setTimeout(() => {
     });
 }, 2000);
 
-function mouseStopped(){ 
-    blurredElement.forEach(element => {
+// Function to remove blur class from elements
+function mouseStopped() {
+    blurredElements.forEach(element => {
         element.classList.remove("blur");
     });
 }
-function mouseMove(x) {
-    blurredElement.forEach(element => {
-        if (x.matches) { // If media query matches
-            window.addEventListener("mousemove", () => {
-                blurredElement.forEach(element => {
-                    element.classList.add("blur");
-                });
-                clearTimeout(timer);
-                timer = setTimeout(mouseStopped,500);
-            });
-        }
-    });
-}
-// Create a MediaQueryList object
-var x = window.matchMedia("(min-width: 768px)");
-// Call listener function at run time
-mouseMove(x);
-// Attach listener function on state changes
-x.addEventListener("change", function() {
-    mouseMove(x);
-});
 
+// Function to add blur class to elements when mouse moves
+function mouseMoveHandler() {
+    blurredElements.forEach(element => {
+        element.classList.add("blur");
+    });
+    clearTimeout(timer);
+    timer = setTimeout(mouseStopped, 500);
+}
+
+// Attach mousemove event listener for blur effect
+function attachMouseMoveListener() {
+    window.addEventListener("mousemove", mouseMoveHandler);
+}
+
+// Add blur effect on larger screens
+function addBlurOnLargeScreens(mediaQuery) {
+    if (mediaQuery.matches) {
+        attachMouseMoveListener();
+    } else {
+        window.removeEventListener("mousemove", mouseMoveHandler);
+        blurredElements.forEach(element => {
+            element.classList.remove("blur");
+        });
+    }
+}
+
+// Set up media query listener for screen size change
+const largeScreen = window.matchMedia("(min-width: 768px)");
+addBlurOnLargeScreens(largeScreen); // Call listener function at run time
+largeScreen.addEventListener("change", () => addBlurOnLargeScreens(largeScreen)); // Attach listener function on state changes
+
+// Update time every minute
 function updateTime() {
     const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-
-    var formatDate = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const clockStr = `${now.toLocaleDateString('en-UK', formatDate)}, ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-
+    const formatDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const clockStr = `${now.toLocaleDateString('en-UK', formatDate)}, ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
     timeElement.innerText = clockStr;
     setTimeout(updateTime, 60000);
 }
 updateTime();
-
